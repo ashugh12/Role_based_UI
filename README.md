@@ -139,7 +139,7 @@ Ensure you have the following installed on your machine:
 ---
 
 ## 🔗 Live Links
-- **Frontend**: [https://cerulean-stroopwafel-e7d9c6.netlify.app/users](https://cerulean-stroopwafel-e7d9c6.netlify.app/users)  
+- **Frontend**: [https://cerulean-stroopwafel-e7d9c6.netlify.app/users](https://cerulean-stroopwafel-e7d9c6.netlify.app/)  
 - **Users API**: [https://role-based-ui.onrender.com/users](https://role-based-ui.onrender.com/users)  
 - **Roles API**: [https://role-based-ui.onrender.com/roles](https://role-based-ui.onrender.com/roles)  
 
