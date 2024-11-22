@@ -12,11 +12,11 @@ const UserList = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/users');
+        const response = await axios.get('https://role-based-ui.onrender.com/users');
         setUsers(response.data);
       } catch (err) {
         setError('Error fetching users. Please try again.');
-        console.error(err);
+        console.error('Fetch Users Error:', err);
       }
     };
     fetchUsers();
@@ -24,21 +24,21 @@ const UserList = () => {
 
   const addUser = async (user) => {
     try {
-      const response = await axios.post('http://localhost:5000/users', user);
+      const response = await axios.post('https://role-based-ui.onrender.com/users', user);
       setUsers([...users, response.data]);
     } catch (err) {
       setError('Error adding user. Please try again.');
-      console.error(err);
+      console.error('Add User Error:', err);
     }
   };
 
   const deleteUser = async (userId) => {
     try {
-      await axios.delete(`http://localhost:5000/users/${userId}`);
+      await axios.delete(`https://role-based-ui.onrender.com/users/${userId}`);
       setUsers(users.filter((user) => user.id !== userId));
     } catch (err) {
       setError('Error deleting user. Please try again.');
-      console.error(err);
+      console.error('Delete User Error:', err);
     }
   };
 

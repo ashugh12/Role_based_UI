@@ -11,7 +11,7 @@ const RoleList = () => {
   useEffect(() => {
     const fetchRoles = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/roles');
+        const response = await axios.get('https://role-based-ui.onrender.com/roles');
         setRoles(response.data);
       } catch (err) {
         console.error(err);
@@ -22,7 +22,7 @@ const RoleList = () => {
 
   const addRole = async (role) => {
     try {
-      const response = await axios.post('http://localhost:5000/roles', role);
+      const response = await axios.post('https://role-based-ui.onrender.com/roles', role);
       setRoles([...roles, response.data]);
     } catch (err) {
       console.error(err);
@@ -30,7 +30,7 @@ const RoleList = () => {
   };
   const deleteRole = async (roleId) => {
     try {
-      await axios.delete(`http://localhost:5000/roles/${roleId}`);
+      await axios.delete(`https://role-based-ui.onrender.com/roles${roleId}`);
       setRoles(roles.filter((role) => role.id !== roleId));
     } catch (err) {
       console.error(err);
