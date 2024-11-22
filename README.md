@@ -1,102 +1,154 @@
-"# Role_based_UI" 
-Project Overview
-1. User Management
-The User Management module provides a way to view and manage users. It includes options to add, edit, or delete users, assign roles to users, and manage their status (Active/Inactive).
+# Role-Based UI
 
-2. Role Management
-The Role Management module allows administrators to define and edit roles. Roles can include various permissions such as Read, Write, Delete, or custom attributes.
+This project demonstrates a **Role-Based Access Control (RBAC)** system with user and role management, dynamic permissions, and a simulated backend using JSON Server. 
 
-3. Dynamic Permissions
-The Dynamic Permissions module provides a method to assign or modify permissions for roles. Permissions are displayed clearly for ease of understanding and modification.
+---
 
-4. Custom API Simulation
-The project includes a custom API simulation using JSON Server to mock CRUD operations on users and roles, validating functionality.
+## 🚀 Project Overview
 
-Setup Instructions
-Prerequisites
-Node.jsand npm installed on your machine.
+### 1. User Management  
+- View, add, edit, or delete users.  
+- Assign roles to users.  
+- Manage user status (Active/Inactive).  
 
-Backend Setup
-Create a Node.jsserver for JSON Server:
+### 2. Role Management  
+- Define and edit roles.  
+- Roles include permissions like **Read**, **Write**, **Delete**, or custom attributes.  
 
-Create a file named server.js:
+### 3. Dynamic Permissions  
+- Assign or modify permissions for roles dynamically.  
+- Display permissions in an intuitive, easy-to-modify layout.  
 
-javascript
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('db.json'); // Path to your db.json file
-const middlewares = jsonServer.defaults();
+### 4. Custom API Simulation  
+- Simulated backend using **JSON Server** for CRUD operations on users and roles.  
+- Validates frontend functionality with mocked data.
 
-server.use(middlewares);
-server.use(router);
+---
 
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  console.log(`JSON Server is running on port ${PORT}`);
-});
-Create db.json in the project root with the following content:
+## 🛠️ Setup Instructions
 
-json
-{
-  "users": [
-    { "id": 1, "name": "Alice", "role": "Admin", "status": "Active" },
-    { "id": 2, "name": "Bob", "role": "User", "status": "Inactive" }
-  ],
-  "roles": [
-    { "id": 1, "name": "Admin", "permissions": ["read", "write", "delete"] },
-    { "id": 2, "name": "User", "permissions": ["read"] }
-  ]
-}
-Install dependencies:
+### **Prerequisites**
+Ensure you have the following installed on your machine:  
+- [Node.js](https://nodejs.org/)  
+- [npm](https://www.npmjs.com/)  
 
-bash
-npm install json-server
-Add a start script in package.json:
+---
 
-json
-"scripts": {
-  "start": "node server.js"
-}
-Start the JSON server:
+### **Backend Setup**
 
-bash
-npm start
-Frontend Setup
-Initialize a React project:
+1. **Create a Node.js server for JSON Server**:  
+   - Create a `server.js` file in your project root with the following code:  
+     ```javascript
+     const jsonServer = require('json-server');
+     const server = jsonServer.create();
+     const router = jsonServer.router('db.json'); // Path to your db.json file
+     const middlewares = jsonServer.defaults();
 
-bash
-npx create-react-app rbac-ui
-cd rbac-ui
-Install dependencies:
+     server.use(middlewares);
+     server.use(router);
 
-bash
-npm install axios react-router-dom @mui/material @emotion/react @emotion/styled
-Create necessary components:
+     const PORT = process.env.PORT || 5000;
+     server.listen(PORT, () => {
+       console.log(`JSON Server is running on port ${PORT}`);
+     });
+     ```
 
-UserList.js, UserCard.js, UserForm.js
+2. **Create the database file (`db.json`)**:  
+   - Add this sample content:  
+     ```json
+     {
+       "users": [
+         { "id": 1, "name": "Alice", "role": "Admin", "status": "Active" },
+         { "id": 2, "name": "Bob", "role": "User", "status": "Inactive" }
+       ],
+       "roles": [
+         { "id": 1, "name": "Admin", "permissions": ["read", "write", "delete"] },
+         { "id": 2, "name": "User", "permissions": ["read"] }
+       ]
+     }
+     ```
 
-RoleList.js, RoleCard.js, RoleForm.js
+3. **Install dependencies**:  
+   ```bash
+   npm install json-server
+   ```
 
-NavBar.js for navigation
+4. **Add a start script in `package.json`**:  
+   ```json
+   "scripts": {
+     "start": "node server.js"
+   }
+   ```
 
-Update API endpoints in your components to point to the deployed JSON server:
+5. **Run the backend server**:  
+   ```bash
+   npm start
+   ```
 
-jsx
-const fetchUsers = async () => {
-  try {
-    const response = await axios.get('https://your-deployed-json-server-url/users');
-    setUsers(response.data);
-  } catch (err) {
-    console.error('Fetch Users Error:', err);
-  }
-};
-Deployment
-Build the project:
+---
 
-bash
-npm run build
-Deploy the frontend using a service like Netlify:
+### **Frontend Setup**
 
-Drag and drop the build folder in Netlify or connect your GitHub repository.
+1. **Create a React project**:  
+   ```bash
+   npx create-react-app rbac-ui
+   cd rbac-ui
+   ```
 
-Test your application to ensure all features work with the deployed backend.
+2. **Install dependencies**:  
+   ```bash
+   npm install axios react-router-dom @mui/material @emotion/react @emotion/styled
+   ```
+
+3. **Create components**:  
+   - **User Components**: `UserList.js`, `UserCard.js`, `UserForm.js`  
+   - **Role Components**: `RoleList.js`, `RoleCard.js`, `RoleForm.js`  
+   - **Navigation**: `NavBar.js`  
+
+4. **Set API endpoints**:  
+   Update API calls in your components to use the deployed backend URLs:  
+   ```javascript
+   const fetchUsers = async () => {
+     try {
+       const response = await axios.get('https://role-based-ui.onrender.com/users');
+       setUsers(response.data);
+     } catch (err) {
+       console.error('Fetch Users Error:', err);
+     }
+   };
+   ```
+
+---
+
+## 🌐 Deployment
+
+1. **Build the frontend**:  
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy the frontend using Netlify**:  
+   - Deploy the **build folder** via drag-and-drop or connect your GitHub repository.  
+   - Access the deployed frontend [here](https://cerulean-stroopwafel-e7d9c6.netlify.app/users).
+
+3. **Backend Deployment**:  
+   - JSON Server backend is deployed on Render.  
+     - Users API: [https://role-based-ui.onrender.com/users](https://role-based-ui.onrender.com/users)  
+     - Roles API: [https://role-based-ui.onrender.com/roles](https://role-based-ui.onrender.com/roles)
+
+---
+
+## 🔗 Live Links
+- **Frontend**: [https://cerulean-stroopwafel-e7d9c6.netlify.app/users](https://cerulean-stroopwafel-e7d9c6.netlify.app/users)  
+- **Users API**: [https://role-based-ui.onrender.com/users](https://role-based-ui.onrender.com/users)  
+- **Roles API**: [https://role-based-ui.onrender.com/roles](https://role-based-ui.onrender.com/roles)  
+
+---
+
+## 🤝 Contribution
+Feel free to fork the project, make changes, and submit a pull request. Suggestions and improvements are always welcome!  
+
+---
+
+## 📄 License
+This project is open-source and available under the MIT License.
