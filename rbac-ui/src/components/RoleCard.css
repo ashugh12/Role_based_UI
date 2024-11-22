@@ -1,0 +1,32 @@
+.role-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    width: 100%;  /* Ensuring all cards have the same width */
+    max-width: 300px;  /* Set a maximum width for consistency */
+    height: 250px;  /* Set a fixed height for consistency */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .role-card-title {
+    color: #444;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .role-card-permissions {
+    color: #777;
+    margin: 5px 0;
+  }
+  
+  .role-card-button {
+    margin-top: 15px;
+    background-color: rgb(251, 102, 102) !important;  /* Red background color for the button */
+    color: white;  /* White text color for the button */
+  }
+  

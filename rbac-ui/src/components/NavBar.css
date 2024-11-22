@@ -1,0 +1,9 @@
+.app-bar {
+    background-color: #3c1b76 !important;
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+  }
+  

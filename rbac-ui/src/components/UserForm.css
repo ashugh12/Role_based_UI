@@ -1,0 +1,31 @@
+/* Center the form and provide some padding */
+.user-form-container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 500px; /* Set a maximum width for the form */
+    background-color: #f9f9f9; /* Light gray background for form */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Style the form inputs and ensure vertical spacing */
+  .user-form .user-form-input {
+    margin-bottom: 20px !important; /* Add !important to enforce the style */
+  }
+  
+  
+  /* Style the submit button */
+  .user-form-button {
+    display: block; /* Ensure button spans the width */
+    width: 50%; /* Make the button take full width of the form */
+    padding: 10px; /* Add padding for a bigger click area */
+    font-size: 16px; /* Increase font size for better readability */
+    background-color: #1976d2; /* Material-UI primary blue color */
+    color: white; /* Ensure the button text is visible */
+    align-self: center;
+  }
+  
+  .user-form-button:hover {
+    background-color: #1565c0; /* Slightly darker blue on hover */
+  }

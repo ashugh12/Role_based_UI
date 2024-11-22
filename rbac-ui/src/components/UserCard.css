@@ -1,0 +1,25 @@
+.user-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .user-card-title {
+    color: #444;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+  
+  .user-card-role,
+  .user-card-status {
+    color: #777;
+    margin: 5px 0;
+  }
+  
+  .user-card-button {
+    margin-top: 10px;
+  }
+  

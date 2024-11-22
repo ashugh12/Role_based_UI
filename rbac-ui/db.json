@@ -5,18 +5,6 @@
       "name": "Alice",
       "role": "Admin",
       "status": "Active"
-    },
-    {
-      "id": "2",
-      "name": "Bob",
-      "role": "User",
-      "status": "Inactive"
-    },
-    {
-      "id": "d958",
-      "name": "Ashutosh Mishra",
-      "role": "Admin",
-      "status": "Active"
     }
   ],
   "roles": [
@@ -30,9 +18,10 @@
       ]
     },
     {
-      "id": "2",
-      "name": "User",
+      "id": "c8bd",
+      "name": "Manager",
       "permissions": [
+        "write",
         "read"
       ]
     }

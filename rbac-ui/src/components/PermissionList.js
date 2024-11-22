@@ -1,15 +1,15 @@
 import React from 'react';
+import { List, ListItem, ListItemText } from '@mui/material';
 
 const PermissionList = ({ role }) => {
   return (
-    <div>
-      <h4>Permissions for {role.name}</h4>
-      <ul>
-        {role.permissions.map((permission, index) => (
-          <li key={index}>{permission}</li>
-        ))}
-      </ul>
-    </div>
+    <List>
+      {role.permissions.map((permission, index) => (
+        <ListItem key={index}>
+          <ListItemText primary={permission} />
+        </ListItem>
+      ))}
+    </List>
   );
 };
 
